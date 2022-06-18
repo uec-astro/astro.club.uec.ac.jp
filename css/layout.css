@@ -1,0 +1,389 @@
+/*
+=====================================================================
+*   NT Layout Stylesheet
+*   url: https://nt-rcj.github.io/home/
+*   11-10-2020
+=====================================================================
+
+   TOC:
+   a. General Styles
+   b. Header Styles
+   c. About Section
+   d. Resume Section
+   e. Portfolio Section
+   f. Call To Action Section
+   g. Testimonials Section
+   h. Contact Section
+   i. Footer
+
+===================================================================== */
+
+/* ------------------------------------------------------------------ */
+/* a. General Styles
+/* ------------------------------------------------------------------ */
+
+body { background: #000000; }
+
+
+/* ------------------------------------------------------------------ */
+/* c. Home Section
+/* ------------------------------------------------------------------ */
+
+#home {
+   align-items: center;
+   background: #161415 url(https://raw.githubusercontent.com/nt-rcj/username.github.io/main/image/Screenshot_20200204-231337.png) no-repeat;
+   background-position: 50% 50%;
+   background-size: cover;
+   display: flex;
+   height: 100vh;
+   justify-content: center;
+}
+
+/* vertically center banner section */
+#home:before {
+   content: '';
+   display: inline-block;
+   vertical-align: middle;
+   height: 100%;
+}
+
+#home .banner-text h1 {
+   font: 5vw 'Audiowide', cursive;
+   color: rgb(255, 255, 255);
+   letter-spacing: -2px;
+   margin: 0 auto 18px auto;
+   text-shadow: 0px 1px 3px rgba(255, 255, 255, 0);
+   text-align: center;
+}
+#home .banner-text h3 {
+   font: 0.5vw 'Montserrat', sans-serif;
+   color: #ffffff;
+   margin: 0 auto;
+   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
+   text-align: center;
+}
+#home .banner-text h3 {
+   position: relative;
+ }
+ #home .banner-text h3:before {
+   content: '';
+   position: absolute;
+   left: 50%;
+   bottom: -5px; /*下線の上下位置調整*/
+   display: inline-block;
+   width: 5%; /*下線の幅*/
+   height: 1px; /*下線の太さ*/
+   -moz-transform: translateX(-50%);
+   -webkit-transform: translateX(-50%);
+   -ms-transform: translateX(-50%);
+   transform: translate(-50%); /*位置調整*/
+   background-color: #0400ff; /*下線の色*/
+ }
+
+/* scrolldown link */
+#home .scrolldown a {
+   padding-top: 70px;
+   position: absolute;
+   bottom: 20px;
+   left: 50%;
+   z-index: 2;
+   display: inline-block;
+   -webkit-transform: translate(0, -50%);
+   transform: translate(0, -50%);
+   color: #fff;
+   font : normal 400 20px/1 'Josefin Sans', sans-serif;
+   letter-spacing: .1em;
+   text-decoration: none;
+   transition: opacity .3s;   
+ }
+#home .scrolldown  a span {
+   position: absolute;
+   top: 0;
+   left: 50%;
+   width: 24px;
+   height: 24px;
+   margin-left: -12px;
+   border-left: 1px solid #fff;
+   border-bottom: 1px solid #fff;
+   -webkit-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   -webkit-animation: sdb 1.5s infinite;
+   animation: sdb 1.5s infinite;
+   box-sizing: border-box;
+ }
+ @-webkit-keyframes sdb {
+   0% {
+     -webkit-transform: rotate(-45deg) translate(0, 0);
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+   100% {
+     -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+     opacity: 0;
+   }
+ }
+ @keyframes sdb {
+   0% {
+     transform: rotate(-45deg) translate(0, 0);
+     opacity: 0;
+   }
+   50% {
+     opacity: 1;
+   }
+   100% {
+     transform: rotate(-45deg) translate(-20px, 20px);
+     opacity: 0;
+   }
+ }
+
+/* ------------------------------------------------------------------ */
+/* c. About Section
+/* ------------------------------------------------------------------ */
+
+/* 上下左右中央揃えしています */
+.container {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   height: 50vh;
+}
+
+.box {
+   margin: 0 auto;
+   max-width: 90%; /*別に必要ないですww*/
+
+}
+
+.box h2 {
+   margin: 0;
+   color: #bbffbd;/*画像の色の薄い色を入れてみました*/
+   font: 100px 'Righteous', cursive;
+   padding-bottom: 10px;
+}
+
+.textMask {
+   display: inline-block;/*これが無いとスマホで表示されない*/
+   margin: 0;
+   color: transparent;/*透明にして背景が見えるようにする*/
+   -webkit-text-fill-color: transparent;
+   background: url(https://raw.githubusercontent.com/nt-rcj/username.github.io/main/image/home-back1.png); /*背景の指定*/
+   -webkit-background-clip: text;/*テキストでマスク*/
+   background-clip: text;/*テキストでマスク*/
+   -webkit-animation: bgAnim 20s alternate infinite ease-in-out;
+           animation: bgAnim 20s alternate infinite ease-in-out;
+   font: 60px 'Josefin Sans', sans-serif;        
+   line-height: 1;
+}
+
+@-webkit-keyframes bgAnim {
+   0% {
+       background-position: 0 0;
+   }
+   50% {
+       background-position: 100% 0;
+   }
+   100% {
+       background-position: 0 0;
+   }
+}
+
+@keyframes bgAnim {
+   0% {
+       background-position: 0 0;
+   }
+   50% {
+       background-position: 100% 0;
+   }
+   100% {
+       background-position: 0 0;
+   }
+}
+/* ------------------------------- */
+/* -------------スマホ------------- */
+/* ------------------------------- */
+@media screen and (max-width: 480px) {
+   .container {
+       height: auto;
+   }
+   .box h2 {
+       font-size: 48px;
+   }
+   .textMask {
+       font-size: 32px;
+   }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* d. pagelink Section
+/* ------------------------------------------------------------------ */
+#pagelink{
+   position: relative;
+   width: 100%;
+   margin: 0 auto;
+   padding-top: 0px;
+   padding-bottom: 500px;
+}
+#pagelink h3 {
+   font: 50px 'Audiowide', cursive;
+   color: #fffefe;
+	word-spacing: -0.15em;
+   font-weight: 300;
+   text-align: center;
+
+}
+
+.grid {
+    padding: 1em 0 4em;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+   font: 50px 'Audiowide', cursive;
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.fuchidori {
+   color: rgba(0, 0, 0, 0);
+   -webkit-text-stroke: 1px #FFF;
+ }
+
+.grid figure p {
+   font: 20px 'Montserrat', sans-serif;
+   color: #ffffff;
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+/*---------------*/
+/***** Sadie *****/
+/*---------------*/
+
+figure.effect-sadie figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	content: '';
+	opacity: 0;
+	-webkit-transform: translate3d(0,50%,0);
+	transform: translate3d(0,50%,0);
+}
+
+figure.effect-sadie h2 {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
+	transition: transform 0.35s, color 0.35s;
+	-webkit-transform: translate3d(0,-50%,0);
+	transform: translate3d(0,-50%,0);
+}
+
+figure.effect-sadie figcaption::before,
+figure.effect-sadie p {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-sadie p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 2em;
+	width: 100%;
+	opacity: 0;
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+figure.effect-sadie:hover h2 {
+	color: #fff;
+	-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+}
+
+figure.effect-sadie:hover figcaption::before ,
+figure.effect-sadie:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+
